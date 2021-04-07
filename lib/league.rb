@@ -27,9 +27,8 @@ class League
       team.players
      end.flatten!
     highest_paid = players.group_by do |player|
-      player.salary % 3
-    end.max.flatten!
-    highest_paid.shift
+      player.salary
+    end.max.last
     highest_paid.map do |player|
       player.name
     end

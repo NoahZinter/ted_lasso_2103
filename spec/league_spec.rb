@@ -69,6 +69,20 @@ describe League do
   describe "#most_expensive_player" do
     it 'returns the highest_paid player' do
       premier = League.new("Premier League")
+      roy = Player.new({name: "Roy Kent", position: "Center Midfielder" , salary: 1_000_000})
+      sam = Player.new({name: "Sam Obisanya", position: "Right-back Defender", salary: 600_000})
+      richmond = Team.new("AFC Richmond", "Ted Lasso", [roy, sam])
+      jamie = Player.new({name: "Jamie Tartt", position: "Striker", salary: 1_500_000})
+      fernandinho = Player.new({name: "Fernandinho", position: "Midfielder", salary: 5_200_000})
+      manchester = Team.new("Manchester City FC", "Pep Guardiola", [jamie, fernandinho])
+      premier.add_team(richmond)
+      premier.add_team(manchester)
+
+      expect(premier.most_expensive_player).to eq(["Fernandinho"])
+    end
+
+    it 'returns the multiple players in a tie' do
+      premier = League.new("Premier League")
       roy = Player.new({name: "Roy Kent", position: "Center Midfielder" , salary: 5_200_000})
       sam = Player.new({name: "Sam Obisanya", position: "Right-back Defender", salary: 600_000})
       richmond = Team.new("AFC Richmond", "Ted Lasso", [roy, sam])
