@@ -94,7 +94,28 @@ describe League do
 
       expect(premier.most_expensive_player).to eq(["Roy Kent", "Fernandinho"])
     end
-  end
+  end 
 
-
+   #  describe "#players_by_salary_range" do
+   #    it "groups players in a hash by salary range" do
+   #      premier = League.new("Premier League")
+   #      roy = Player.new({name: "Roy Kent", position: "Center Midfielder" , salary: 5_200_000})
+   #      sam = Player.new({name: "Sam Obisanya", position: "Right-back Defender", salary: 600_000})
+   #      richmond = Team.new("AFC Richmond", "Ted Lasso", [roy, sam])
+   #      jamie = Player.new({name: "Jamie Tartt", position: "Striker", salary: 1_500_000})
+   #      fernandinho = Player.new({name: "Fernandinho", position: "Midfielder", salary: 5_200_000})
+   #      manchester = Team.new("Manchester City FC", "Pep Guardiola", [jamie, fernandinho])
+   #      premier.add_team(richmond)
+   #      premier.add_team(manchester)
+   #
+   #      expect(premier.players_by_salary_range).to eq({
+   #           "Over 0M" => ["Sam Obisanya"],
+   #           "Over 1M" => ["Roy Kent", "Jamie Tartt"],
+   #           "Over 2M" => [],
+   #           "Over 3M" => [],
+   #           "Over 4M" => [],
+   #           "Over 5M" => ["Fernandinho"],
+   #         }
+   #    end
+   # end
 end

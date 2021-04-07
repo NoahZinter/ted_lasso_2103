@@ -34,4 +34,15 @@ class League
     end
   end
 
+  # def players_by_salary_range
+  #   ranges = {}
+  #   players = @teams.map do |team|
+  #     team.players
+  #    end.flatten!
+  #   players.each do |player|
+  #
+  #
+  #
+  # end
+
 end
