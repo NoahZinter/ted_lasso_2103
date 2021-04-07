@@ -50,7 +50,7 @@ describe Team do
       sam = Player.new({name: "Sam Obisanya", position: "Right-back Defender", salary: 600_000})
       richmond = Team.new("AFC Richmond", "Ted Lasso", [roy, sam])
 
-      expect(richmond.captain).to eq("Roy Kent")
+      expect(richmond.captain.name).to eq("Roy Kent")
     end
   end
 

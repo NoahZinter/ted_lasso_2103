@@ -19,7 +19,6 @@ class Team
     highest_paid = @players.max_by do |player|
       player.salary
     end
-    highest_paid.name
   end
 
   def fill_positions
