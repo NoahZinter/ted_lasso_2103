@@ -17,21 +17,22 @@ class League
   end
 
   def players_by_team
-  # teams_players = Hash.new do |hash, key|
-  #   hash[key] = []
-  # @teams.each do |team|
-  #   teams_players[team.name] << team.players
-  # end
-  # player_names = @teams.map do |team|
-  #   team.players.map do |player|
-  #     player.name
-  #    end
-  #  end
-  teams_players = @teams.map do |team|
-    [team.name, team.players.map {|player| player.name}]
-   end.to_h
-
+    teams_players = @teams.map do |team|
+      [team.name, team.players.map {|player| player.name}]
+    end.to_h
   end
 
+  def most_expensive_player
+    players = @teams.map do |team|
+      team.players
+     end.flatten!
+    highest_paid = players.group_by do |player|
+      player.salary % 3
+    end.max.flatten!
+    highest_paid.shift
+    highest_paid.map do |player|
+      player.name
+    end
+  end
 
 end

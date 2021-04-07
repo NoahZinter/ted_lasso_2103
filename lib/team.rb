@@ -26,6 +26,4 @@ class Team
       @positions_filled << player.position
     end
   end
-
-
 end
